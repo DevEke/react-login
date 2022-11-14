@@ -1,5 +1,4 @@
 
-import styles from '../styles/globals.module.css';
 import { HiCheckCircle, HiInformationCircle, HiExclamationCircle } from 'react-icons/hi2';
 import { HiOutlineX } from 'react-icons/hi';
 
@@ -7,17 +6,17 @@ import { HiOutlineX } from 'react-icons/hi';
 export default function Alerts(props) {
     const { alertMessage, alertType, removeAlert } = props;
     return (
-        <div className={styles["alert_container"]}>
-            <div className={styles["alert_content"]}>
-                <div className={styles["alert_content"]}>
+        <div className="alert_container">
+            <div className="alert_content">
+                <div className="alert_content">
                     {
                         alertType ?
-                        <HiCheckCircle color='#2cbf4c' className={styles["alert_icon"]}/>
-                        : <HiExclamationCircle color='#bf2c3d' className={styles["alert_icon"]}/>
+                        <HiCheckCircle color='#2cbf4c' className="alert_icon"/>
+                        : <HiExclamationCircle color='#bf2c3d' className="alert_icon"/>
                     }
-                <p className={styles["alert_message"]}>{alertMessage}</p>
+                <p className="alert_message">{alertMessage}</p>
                 </div>
-                <HiOutlineX onClick={removeAlert} className={styles["alert_close"]} />
+                <HiOutlineX onClick={removeAlert} className="alert_close" />
             </div>
         </div>
     )

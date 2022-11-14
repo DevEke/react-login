@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Login from './components/Login';
-import Register from './components/Register';
-import Forgot from './components/Forgot';
-import Reset from './components/Reset';
-import Dashboard from './components/Dashboard';
+import Login from './screens/Login';
+import Register from './screens/Register';
+import Forgot from './screens/Forgot';
+import Reset from './screens/Reset';
+import Dashboard from './screens/Dashboard';
 import Alerts from './components/Alerts';
-import styles from './styles/globals.module.css';
+import './styles/master.scss';
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -149,11 +149,11 @@ function App() {
   }, [])
 
   return (
-    <div className={styles["app_container"]}>
+    <div className="app_container">
       {
         alertList.length > 0 ?
-        <div className={styles["modal_container"]}>
-          <div className={styles["alerts_list"]}>
+        <div className="alert-modal_container">
+          <div className="alerts_list">
             {alertList.map((alrt, idx) => {
               return (
                 <Alerts key={idx} alertMessage={alrt.alert} alertType={alrt.type} removeAlert={() => removeAlert(alrt.alert)}/>
